@@ -36,4 +36,4 @@ After installing the required packages from previous step, all you need is to na
 python manage.py runserver
 
 # Requests and Responses:
-I have included postman file to show the api usage of this project
+Api schema samples can be found on green_hands.postman_collection.json
