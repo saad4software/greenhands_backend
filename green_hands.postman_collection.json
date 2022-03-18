@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ad40bed7-5f68-4647-a03c-e3fcf030fb9f",
+		"_postman_id": "e7f89745-9335-490f-8bf9-43b23ca9df6d",
 		"name": "green_hands",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -51,13 +51,663 @@
 			]
 		},
 		{
+			"name": "user",
+			"item": [
+				{
+					"name": "photos_list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/photos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"photos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photos_create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "datafile",
+									"type": "file",
+									"src": "/home/saad/Pictures/photo_2022-01-19_09-43-51.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/photos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"photos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "photos_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/photos/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"photos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/notifications/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"notifications",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile_update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"te@site.com\",\n    \"address\": \"damascus-babtoma\",\n    \"first_name\": \"test\",\n    \"last_name\": \"toto\",\n    \"phone\": \"1122335\",\n    \"lat\": 12.55,\n    \"lng\": 36.485\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reqeusts_list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/verify/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "giver",
+			"item": [
+				{
+					"name": "provide",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"need_id\":2,\n    \"message\":\"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/giver/provide/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"giver",
+								"provide",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "provide",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"need_id\":3,\n    \"message\":\"May you eat well\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/giver/provide/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"giver",
+								"provide",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "taker",
+			"item": [
+				{
+					"name": "needs_list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"breakfast\",\n    \"images\": [],\n    \"brief\": \"I need a meal for 5 people\",\n    \"category\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/taker/needs/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"needs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "point",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/taker/point/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"point",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "point",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"exchange point1\",\n    \"images\": [],\n    \"lat\": 19.7,\n    \"lng\": 14.6,\n    \"brief\": \"abo abdo market on mazza 86\",\n    \"address\": \"damascus, mazza 86, next to language instaitute\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/taker/point/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"point",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "needs_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/taker/needs/4/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"needs",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "needs_create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"breakfast\",\n    \"images\": [],\n    \"brief\": \"I need a meal for 5 people\",\n    \"category\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/taker/needs/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"needs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "point_delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/taker/point/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"point",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"organizer_id\":4,\n    \"message\":\"please verify me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/taker/verify/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/taker/verify/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"taker",
+								"verify",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "organizer",
+			"item": [
+				{
+					"name": "requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/organizer/requests/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organizer",
+								"requests",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requests",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"request_id\":1,\n    \"status\":\"V\",\n    \"message\":\"please verify me\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/organizer/requests/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"organizer",
+								"requests",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "categories",
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MzA2MDcxLCJpYXQiOjE2NDcwMTAwNzEsImp0aSI6IjA1ODM2YWE5YjBlYjQ1NzRhODZmZDk2Mjk4MmQ1NWM3IiwidXNlcl9pZCI6MX0.e38IhWi5yjfzPyUOLZiHC1iFWFEbZwicljnn3S8h6Gc",
+						"value": "{{token}}",
 						"type": "default"
 					},
 					{
@@ -67,14 +717,41 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:8000/api/categories/",
+					"raw": "{{base_url}}/categories/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"categories",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "organizers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/organizers/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"organizers",
 						""
 					]
 				}
@@ -88,7 +765,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MzA2MDcxLCJpYXQiOjE2NDcwMTAwNzEsImp0aSI6IjA1ODM2YWE5YjBlYjQ1NzRhODZmZDk2Mjk4MmQ1NWM3IiwidXNlcl9pZCI6MX0.e38IhWi5yjfzPyUOLZiHC1iFWFEbZwicljnn3S8h6Gc",
+						"value": "{{token}}",
 						"type": "default"
 					},
 					{
@@ -98,13 +775,11 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:8000/api/needs/",
+					"raw": "{{base_url}}/needs/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"needs",
 						""
 					]
@@ -119,7 +794,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MzA2MDcxLCJpYXQiOjE2NDcwMTAwNzEsImp0aSI6IjA1ODM2YWE5YjBlYjQ1NzRhODZmZDk2Mjk4MmQ1NWM3IiwidXNlcl9pZCI6MX0.e38IhWi5yjfzPyUOLZiHC1iFWFEbZwicljnn3S8h6Gc",
+						"value": "{{token}}",
 						"type": "default"
 					},
 					{
@@ -129,450 +804,12 @@
 					}
 				],
 				"url": {
-					"raw": "localhost:8000/api/points/",
+					"raw": "{{base_url}}/points/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"points",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_notifications_list",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_notifications/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_notifications",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_needs_create",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"breakfast\",\n    \"images\": [],\n    \"brief\": \"I need a meal for 5 people\",\n    \"category\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_needs/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_needs",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_needs_list",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"breakfast\",\n    \"images\": [],\n    \"brief\": \"I need a meal for 5 people\",\n    \"category\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_needs/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_needs",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_needs_delete",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_needs/4/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_needs",
-						"4",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_photos_create",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "datafile",
-							"type": "file",
-							"src": "/home/saad/Pictures/photo_2022-01-19_09-43-51.jpg"
-						}
-					],
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_photos/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_photos",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_photos_list",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_photos/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_photos",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_profile",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_profile/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_profile",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_profile_update",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\": \"email4@site.com\",\n    \"address\": \"damascus-almazza\",\n    \"first_name\": \"fn\",\n    \"last_name\": \"ln\",\n    \"phone\": \"1122335\",\n    \"lat\": 12.0,\n    \"lng\": 36.0\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_profile/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_profile",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_photos_delete",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_photos/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_photos",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_point_create_edit",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"exchange point1 nn\",\n    \"images\": [],\n    \"lat\": 19.0,\n    \"lng\": 14.0,\n    \"brief\": \"abo abdo market on mazza 86\",\n    \"address\": \"damascus, mazza 86, next to language instaitute\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_point/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_point",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_point",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"exchange point1 nn\",\n    \"images\": [],\n    \"lat\": 19.0,\n    \"lng\": 14.0,\n    \"brief\": \"abo abdo market on mazza 86\",\n    \"address\": \"damascus, mazza 86, next to language instaitute\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/my_point/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_point",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "my_point_delete",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDAwNDMzLCJpYXQiOjE2NDcxMDQ0MzMsImp0aSI6IjExYjEwMjJkMjk5YjQ4Mzc5NjBhNzQyMjVhMDI4NGIyIiwidXNlcl9pZCI6OH0.9q8fZ_YzDKUkWJLobA3t50r8WvZggkz6h1RWHcvHx8w",
-						"type": "default"
-					},
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "default"
-					}
-				],
-				"url": {
-					"raw": "localhost:8000/api/my_point/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"my_point",
 						""
 					]
 				}
@@ -592,7 +829,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"email3@site.com\",\n    \"role\": \"O\",\n    \"address\": \"damascus-almazza\",\n    \"password\": \"12345678\",\n    \"print\": \"1234567\",\n    \"first_name\": \"fn\",\n    \"last_name\": \"ln\",\n    \"phone\": \"1122335\",\n    \"lat\": 12.0,\n    \"lng\": 36.0\n}",
+					"raw": "{\n    \"email\": \"email@site.com\",\n    \"role\": \"O\",\n    \"address\": \"damascus-almazza\",\n    \"password\": \"12345678\",\n    \"print\": \"1234567\",\n    \"first_name\": \"fn\",\n    \"last_name\": \"ln\",\n    \"phone\": \"1122335\",\n    \"lat\": 12.0,\n    \"lng\": 36.0\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -600,13 +837,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/api/register/",
+					"raw": "{{base_url}}/register/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"register",
 						""
 					]
@@ -629,13 +864,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/api/anonymous_login/",
+					"raw": "{{base_url}}/anonymous_login/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"anonymous_login",
 						""
 					]
@@ -650,7 +883,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"admin@admin.com\",\n    \"password\":\"admin\"\n}",
+					"raw": "{\n    \"username\":\"organizer@site.com\",\n    \"password\":\"12345678\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -658,49 +891,12 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/api/login/",
+					"raw": "{{base_url}}/login/",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8000",
 					"path": [
-						"api",
 						"login",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "provide_need",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDE3OTEwLCJpYXQiOjE2NDcxMjE5MTAsImp0aSI6IjNlYTlmNmI3YjJmNDRmMzU5MjE0ZjI1NjAzZmQ5NjQyIiwidXNlcl9pZCI6OX0.bxulYQA82a43nYSBJ0_XMo6h7OlRACMt16eqIQnSLDU",
-						"type": "default"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"need_id\":2,\n    \"message\":\"admin\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/provide_need/",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"provide_need",
 						""
 					]
 				}
