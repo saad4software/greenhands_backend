@@ -37,3 +37,9 @@ python manage.py runserver
 
 # Requests and Responses:
 Api schema samples can be found on green_hands.postman_collection.json
+
+
+# Related Projects:
+Backend: (on-going) https://github.com/saad4software/greenhands_backend
+Frontend: (on-going) https://github.com/saad4software/greenhands_frontend
+Mobile: (on-going) https://github.com/saad4software/greenhands_mobile
