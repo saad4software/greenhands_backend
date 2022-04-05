@@ -33,7 +33,10 @@ With power comes responsibility, organizers are asked to vouch for takers and he
 
 # Usage
 After installing the required packages from previous step, all you need is to navigate to the project directory and type
+
+```bash
 python manage.py runserver
+```
 
 # Requests and Responses:
 Api schema samples can be found on green_hands.postman_collection.json

@@ -321,3 +321,4 @@ class ConfirmRequestSerializer(serializers.Serializer):
             brief=self.data.get('message')
         )
         notification.save()
+

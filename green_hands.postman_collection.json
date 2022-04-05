@@ -257,31 +257,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "reqeusts_list",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{token}}",
-								"type": "default"
-							}
-						],
-						"url": {
-							"raw": "{{base_url}}/user/verify/",
-							"host": [
-								"{{base_url}}"
-							],
-							"path": [
-								"user",
-								"verify",
-								""
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
