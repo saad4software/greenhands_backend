@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 
 class AnonymousLoginSerializer(serializers.Serializer):
     print = serializers.CharField(required=True)
-    role = serializers.CharField(required=True)
+    role = serializers.CharField(required=False)
 
     def validate_print(self, data):
         if len(data) < 6:
@@ -34,6 +34,8 @@ class AnonymousLoginSerializer(serializers.Serializer):
     def get_user(self, validate_data):
         user = get_user_model().objects.filter(username=validate_data['print']).first()
         if not user:
+            if 'role' not in validate_data:
+                raise serializers.ValidationError(error_invalid_role)
             user = get_user_model().objects.create_user(username=validate_data['print'], role=validate_data['role'])
             user.set_password('12345678')
             user.save()
