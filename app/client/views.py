@@ -34,8 +34,6 @@ class RegisterView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         # activating organizers account requires admin manual approval
-        if serializer.data['role'] != "O":
-            raise APIException("invalid_role")
         serializer.save(is_active=False)
 
 
