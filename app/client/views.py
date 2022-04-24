@@ -149,6 +149,7 @@ class OrganizersListView(generics.ListAPIView):
     pagination_class = StandardResultsSetPagination
     renderer_classes = [CustomRenderer, BrowsableAPIRenderer]
     filter_backends = [filters.DjangoFilterBackend, rest_framework.filters.SearchFilter]
+    filterset_class = OrganizersDataFilter
     search_fields = ['address', 'phone', 'first_name', 'last_name']
 
     def get_queryset(self):
@@ -167,6 +168,7 @@ class PointsListView(generics.ListAPIView):
     pagination_class = StandardResultsSetPagination
     renderer_classes = [CustomRenderer, BrowsableAPIRenderer]
     filter_backends = [filters.DjangoFilterBackend, rest_framework.filters.SearchFilter]
+    filterset_class = PointsDataFilter
     search_fields = ['name', 'brief', 'address']
 
     def get_queryset(self):

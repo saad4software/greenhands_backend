@@ -18,3 +18,25 @@ class NeedDataFilter(filters.FilterSet):
         fields = ['active']
 
 
+class OrganizersDataFilter(filters.FilterSet):
+    min_lat = filters.NumberFilter(field_name='lat', lookup_expr="gte")
+    max_lat = filters.NumberFilter(field_name='lat', lookup_expr="lte")
+    min_lng = filters.NumberFilter(field_name='lng', lookup_expr="gte")
+    max_lng = filters.NumberFilter(field_name='lng', lookup_expr="lte")
+
+    class Meta:
+        model = User
+        fields = ['min_lat', 'max_lat', 'min_lng', 'max_lng']
+
+
+class PointsDataFilter(filters.FilterSet):
+    min_lat = filters.NumberFilter(field_name='lat', lookup_expr="gte")
+    max_lat = filters.NumberFilter(field_name='lat', lookup_expr="lte")
+    min_lng = filters.NumberFilter(field_name='lng', lookup_expr="gte")
+    max_lng = filters.NumberFilter(field_name='lng', lookup_expr="lte")
+
+    class Meta:
+        model = Point
+        fields = ['min_lat', 'max_lat', 'min_lng', 'max_lng']
+
+

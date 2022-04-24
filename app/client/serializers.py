@@ -37,7 +37,7 @@ class AnonymousLoginSerializer(serializers.Serializer):
         user = get_user_model().objects.filter(username=validate_data['print']).first()
         if not user:
             if validate_data['role'] not in ['G', 'T']:
-                raise serializers.ValidationError(error_invalid_role)
+                raise serializers.ValidationError("new_user")
             user = get_user_model().objects.create_user(username=validate_data['print'], role=validate_data['role'])
             user.set_password('12345678')
             user.save()
